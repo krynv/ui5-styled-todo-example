@@ -23,7 +23,7 @@ function TodoList({ items, selectionChange, remove, edit }) {
                         done={todo.done}
                         handleDelete={remove}
                         handleEdit={edit}
-                    ></TodoItem>
+                    />
                 );
             })}
         </ui5-list>

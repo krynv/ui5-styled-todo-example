@@ -132,6 +132,7 @@ function App() {
         }));
 
         editDialog.current.open();
+
     }, [todos, setTodoBeingEditted]);
 
     useEffect(() => {
@@ -164,10 +165,9 @@ function App() {
 
     return (
         <div className="app">
-            <ui5-shellbar
-                primary-title="UI5 Web Components React Sample Application" logo={logo}>
-            </ui5-shellbar>
+            <ui5-shellbar primary-title="UI5 Web Components React Sample Application" logo={logo}/>
             <section className="app-content">
+
                 <div className="create-todo-wrapper">
                     <ui5-input placeholder="My Todo ..." ref={todoInput} class="add-todo-element-width" id="add-input"></ui5-input>
                     <ui5-datepicker format-pattern="dd/MM/yyyy" class="add-todo-element-width" ref={todoDeadline} id="date-picker"></ui5-datepicker>
@@ -180,8 +180,7 @@ function App() {
                         selectionChange={handleDone}
                         remove={handleRemove}
                         edit={handleEdit}
-                    >
-                    </TodoList>
+                    />
 
                     <ui5-panel header-text="Completed tasks" collapsed={!todos.filter(todo => todo.done).length || undefined}>
                         <TodoList
@@ -189,8 +188,8 @@ function App() {
                             selectionChange={handleUnDone}
                             remove={handleRemove}
                             edit={handleEdit}
-                        >
-                        </TodoList>
+                        />
+
                     </ui5-panel>
                 </div>
             </section>
@@ -198,12 +197,12 @@ function App() {
                 <div className="dialog-content">
                     <div className="edit-wrapper">
                         <ui5-label>Title:</ui5-label>
-                        <ui5-textarea class="title-textarea" max-length="24" show-exceeded-text value={todoBeingEditted.text} ref={titleEditInput}></ui5-textarea>
+                        <ui5-textarea class="title-textarea" max-length="24" show-exceeded-text value={todoBeingEditted.text} ref={titleEditInput} />
                     </div>
 
                     <div className="edit-wrapper date-edit-fields">
                         <ui5-label>Date:</ui5-label>
-                        <ui5-datepicker format-pattern="dd/MM/yyyy" value={todoBeingEditted.deadline} ref={dateEditInput}></ui5-datepicker>
+                        <ui5-datepicker format-pattern="dd/MM/yyyy" value={todoBeingEditted.deadline} ref={dateEditInput} />
                     </div>
                 </div>
                 <div className="dialog-footer" >
