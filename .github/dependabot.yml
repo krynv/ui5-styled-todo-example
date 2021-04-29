@@ -1,0 +1,32 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+  open-pull-requests-limit: 99
+  ignore:
+  - dependency-name: y18n
+    versions:
+    - 4.0.1
+    - 4.0.2
+  - dependency-name: "@ui5/webcomponents-base"
+    versions:
+    - 0.28.0
+    - 0.30.0
+    - 0.32.0
+  - dependency-name: "@ui5/webcomponents"
+    versions:
+    - 1.0.0-rc.11
+    - 1.0.0-rc.12
+    - 1.0.0-rc.13
+  - dependency-name: react-scripts
+    versions:
+    - 4.0.1
+    - 4.0.2
+  - dependency-name: lodash
+    versions:
+    - 4.17.20
+  - dependency-name: elliptic
+    versions:
+    - 6.5.3
